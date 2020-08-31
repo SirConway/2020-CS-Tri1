@@ -1,0 +1,15 @@
+
+void setup(){
+  size(600,600);
+}
+
+void draw(){
+  background(255,255,255);
+  triangle(0,0,mouseX,mouseY,300,600);
+  fill(255,0,0);
+  triangle(600,0,mouseX,mouseY,300,600);
+  fill(0,0,255);
+  triangle(0,0,mouseX,mouseY,600,0);
+  fill(0,255,0);
+}
+
