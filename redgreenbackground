@@ -1,0 +1,14 @@
+
+void setup(){
+  size(800,800);
+}
+
+void draw(){
+  if(mouseX<width/2){
+    background(150,0,0);
+  } else{
+    background(0,150,0);
+}
+
+line(width/2,0,width/2, height);
+}
