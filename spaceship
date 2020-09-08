@@ -1,0 +1,24 @@
+//Size of canvas in pixels
+size(1000,1000);
+//Background Color. Accepts HTML and RGB-255 values.
+background(27, 42, 53);
+
+//ur a star
+ellipse(166,162,10,100);
+ellipse(206,511,10,100);
+ellipse(492,309,10,100);
+ellipse(751,217,10,100);
+ellipse(770,131,10,100);
+ellipse(740,600,10,100);
+ellipse(642,726,10,100);
+
+fill(203, 132, 66);
+rect(380,500,30,100);
+rect(590,500,30,100);
+triangle(500,400,600,600,400,600);
+rect(370,600,260,70);
+fill(#BDBDBD);
+rect(380,660,240,40);
+
+fill(0);
+ellipse(500,530,40,70);
