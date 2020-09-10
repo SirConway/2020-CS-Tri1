@@ -1,0 +1,25 @@
+float xpos;
+float ypos;
+float directionX = random(-1,1);
+float speed = 10;
+
+void setup(){
+  size(600,600);
+  xpos = width/2;
+  ypos = height/2;
+}
+
+void draw(){
+background(200,200,200);
+
+fill(0,0,0);
+ellipse(xpos, ypos, 50, 50);
+
+xpos = xpos + directionX*speed; 
+
+if(xpos > width-25){
+    directionX = -1 * directionX;
+  } else if(xpos <= 25){
+    directionX = -1 * directionX; 
+  }
+}
