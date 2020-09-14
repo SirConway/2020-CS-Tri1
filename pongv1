@@ -1,0 +1,80 @@
+float x1 = 400;
+float y1 = 200;
+int speed1 = 2;
+float drift = 0;
+int gameOver = 0;
+int colorRed = 250;
+int colorBlue = 250;
+int midcolor = 250;
+float red = 0;
+float green = 0;
+float blue = 0;
+
+
+PFont myFont;
+int botscore = 0;
+int playerscore = 0;
+float speedtext = 3;
+
+float barx = 0;
+
+void setup() {
+  myFont = createFont("Comic Sans",34);
+  textFont(myFont);
+  fill(0);
+  size(800,800);
+}
+
+void draw() {
+  int speed = abs(speed1) - 2;
+  background(colorRed,midcolor,colorBlue);
+  text(botscore, 30, 50);
+  text(playerscore, 750, 770);  //bottom right
+  text(speed, x1+20, y1);  //Ball text
+  ellipse(x1, y1, 30, 30);
+  fill(red,green,blue);
+  
+  y1= y1+speed1;
+  x1=x1+drift;
+  barx = mouseX;
+  rect(barx-30,750,60,10);
+  rect(x1-30,50,60,10);
+  
+  if((y1 > 740) && (y1 < 760) && (x1>barx-30) && (x1<barx+30)){
+    speed1 = speed1 * -1;
+    drift = drift + random(-3,3);
+    red = 0;
+    blue = 200;
+    
+  }else if((y1 > 50) && (y1 < 70)){
+    speed1 = speed1 * -1;
+    speed1 = speed1 + 1;
+    red = 200;
+    blue = 0;
+  }else if(y1>=800){
+    y1 = 400;
+    x1 = 400;
+    speed1 = 2;
+    drift = 0;
+    botscore = botscore + 1;
+  }else if(y1<=0){
+    y1 = 400;
+    x1 = 400;
+    speed1 = 2;
+    drift = 0;
+    playerscore = playerscore + 1;
+  }else if(x1<=20){
+    drift = drift * -1;
+  }else if(x1>=780){
+    drift = drift * -1;
+  }
+
+  if((colorRed >= 250) && (colorBlue <= 0)){
+    speed1 = 0;
+    background(255,0,0);  
+  }else if((colorBlue >= 250) && (colorRed <= 0)){
+    background(0,0,255);
+    speed1 = 0;
+  }
+
+}
